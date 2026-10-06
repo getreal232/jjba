@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HFTF - EmulatorJS</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #game {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game"></div>
+
+    <script>
+        // EmulatorJS Configurations
+        EJS_player = '#game';
+        EJS_core = 'arcade'; // HFTF runs on the FBNeo/MAME Arcade Core
+        
+        // IMPORTANT: Replace this URL with a direct download link to your 'jojoba.zip' file
+        EJS_gameUrl = 'https://YOUR_ROM_HOST_OR_URL/jojoba.zip'; 
+        
+        // Loads EmulatorJS system graphics, icons, and menus directly from a free CDN
+        EJS_pathtodata = 'https://jsdelivr.net';
+    </script>
+    
+    <script src="https://jsdelivr.netloader.js"></script>
+
+</body>
+</html>
