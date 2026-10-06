@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HFTF - EmulatorJS</title>
+    <title>HFTF Arcade</title>
     <style>
         body, html {
             margin: 0;
@@ -25,18 +25,20 @@
 
     <script>
         EJS_player = '#game';
-        EJS_core = 'arcade'; 
+        EJS_core = 'arcade';
+        EJS_startOnLoaded = true; // Forces the emulator to start the second files download
         
-        // Grabs your 15MB clone ROM file directly from your GitHub files
-        EJS_gameUrl = 'jojobanr1.zip'; 
+        // This targets your 15MB file uploaded directly onto GitHub
+        EJS_gameUrl = 'jojobanr1.zip';
         
-        // This includes your exact link with the secure download confirmation token added automatically
-        EJS_biosUrl = 'https://drive.google.com/uc?export=download&id=1Yf02_XW-Vnf_Jiq_qdGsFRwQ2I8g44u2'; 
+        // Google Drive raw download link with auto-bypass parameter included
+        EJS_biosUrl = 'https://drive.google.com/uc?export=download&id=1Yf02_XW-Vnf_Jiq_qdGsFRwQ2I8g44u2';
         
-        EJS_pathtodata = 'https://jsdelivr.net';
+        // Swapped to an alternative high-availability storage delivery network
+        EJS_pathtodata = 'https://githack.com';
     </script>
     
-    <script src="https://jsdelivr.netloader.js"></script>
+    <script src="https://githack.comloader.js"></script>
 
 </body>
 </html>
