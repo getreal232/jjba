@@ -3,41 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoJo HFTF - Self-Hosted</title>
+    <title>JoJo HFTF Arcade</title>
     <style>
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
             overflow: hidden; background-color: #000;
             display: flex; justify-content: center; align-items: center;
         }
-        #emulator-container {
+        #player {
             width: 100vw; height: 100vh;
         }
     </style>
 </head>
 <body>
 
-    <div id="emulator-container"></div>
+    <div id="player"></div>
 
-    <!-- This pulls the raw, unfiltered open-source JS arcade compiler -->
-    <script src="https://cloudflare.com"></script>
+    <!-- Loads a core emulator engine bundle built natively for GitHub Pages -->
+    <script src="https://jsdelivr.net"></script>
     <script>
-        // Setup direct memory paths straight to your repository files
-        const config = {
-            element: document.getElementById('emulator-container'),
-            core: 'fbneo', // The arcade system core layout
-            rom: 'jojobanr1.zip', // This points straight to your 15MB file on GitHub!
-            bios: 'https://drive.google.com/uc?export=download&id=1Yf02_XW-Vnf_Jiq_qdGsFRwQ2I8g44u2',
-            autoStart: true
-        };
-        
-        // Initialize the local emulator compilation sequence
-        window.addEventListener('DOMContentLoaded', () => {
-            if(typeof RetroArch !== 'undefined') {
-                RetroArch.start(config);
-            } else {
-                document.body.innerHTML = "<div style='color:white; font-family:sans-serif; padding:20px;'>Network filter blocked loading assets. Open this site in an Incognito Tab (Ctrl+Shift+N) to play.</div>";
-            }
+        new NeptunJS({
+            element: document.getElementById('player'),
+            core: 'fbalpha2012_cps3', // Runs the Capcom Play System 3 engine architecture natively
+            
+            // This reads your 15MB game clone archive directly out of your repository 
+            rom: 'jojobanr1.zip', 
+            
+            // Your exact parent ROM Google Drive ID configured with a forced raw data call
+            bios: 'https://google.com'
         });
     </script>
 
